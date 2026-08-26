@@ -2,7 +2,7 @@
 #include <util/delay.h>
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <stdbool.h>
 
 void Timer(uint16_t ms){
 // Settings timer   
@@ -74,15 +74,18 @@ int main(void) {
     while (1) {
         
         if((PINC &(1 << PC0)) && (PINC &(1 << PC1))){
-            Louding();
-        
-        
+        Louding();
+        int round = 1;
+        bool flag = 1;
          int err[4];
          for(int i = 0; i < 3; i ++){
             err[i] = Randomizer(3);
          }
+        
+    while(flag){ 
 
-        for(int j = 0; j < 3; j++){
+        
+        for(int j = 0; j < round; j++){
           
             switch(err[j]){
                 case 0:
@@ -109,13 +112,13 @@ int main(void) {
 
         }
         int f = 0;
-        while(f < 3){
+        while(f < round){
         
             if(PINC &(1 << PC0)){
             if(err[f] != 0 ) {
             Error();
             Timer(300);
-            break;
+            flag = 0;
             }else{
                 f++;
             Timer(300);
@@ -125,7 +128,7 @@ int main(void) {
             if(err[f] != 1 ) {
             Error();
             Timer(300);
-            break;
+            flag = 0;
             }else{
                 f++;
             Timer(300);
@@ -135,14 +138,11 @@ int main(void) {
             if(err[f] != 2 ) {
             Error();
             Timer(300);
-            break;
+            flag = 0;
             }else{
                 f++;
             Timer(300);
             }}
-
-          
-            
 
         }
 
@@ -150,8 +150,10 @@ int main(void) {
             PORTD |= (1 << PD3); 
             Timer(500);
             PORTD &= ~(1 << PD3);
+            flag = 0;
             }
-            
+            round++;
+        }
             // if(PINC &(1 << PC0)){
             // PORTD |= (1 << PD2); 
             // }else{
@@ -169,7 +171,7 @@ int main(void) {
             // }else{
             // PORTD &= ~(1 << PD4);}
         }
-            
+        
      
     }
    
