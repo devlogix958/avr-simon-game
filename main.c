@@ -51,14 +51,15 @@ int Randomizer(const int num){
 
 void Error(){
     DDRD |= (1 << PD2)|(1 << PD3)|(1 << PD4);  
-    DDRC &= ~(1 << PC0)|~(1 << PC1)|~(1 << PC2); 
-    int a = 0;
+    DDRC &= ~((1 << PC0)|(1 << PC1)|(1 << PC2)); 
+  
 
-    while(a < 3){
+   for(int i = 0 ; i  < 2; i++){
     PORTD |= (1 << PD2)|(1 << PD3)|(1 << PD4);
     Timer(200);
-    PORTD &=~(1 << PC0)|~(1 << PC1)|~(1 << PC2); 
+    PORTD &=~((1 << PD2)|(1 << PD3)|(1 << PD4)); 
     Timer(200);
+    
     }
     
 }
@@ -113,22 +114,31 @@ int main(void) {
             if(PINC &(1 << PC0)){
             if(err[f] != 0 ) {
             Error();
+            Timer(300);
+            break;
             }else{
                 f++;
+            Timer(300);
             }}
            
             if(PINC &(1 << PC1)){
-            if(err[f] != 0 ) {
+            if(err[f] != 1 ) {
             Error();
+            Timer(300);
+            break;
             }else{
                 f++;
+            Timer(300);
             }}
 
             if(PINC &(1 << PC2)){
-            if(err[f] != 0 ) {
+            if(err[f] != 2 ) {
             Error();
+            Timer(300);
+            break;
             }else{
                 f++;
+            Timer(300);
             }}
 
           
@@ -136,28 +146,28 @@ int main(void) {
 
         }
 
-          if(f == 2){
+          if(f == 3){
             PORTD |= (1 << PD3); 
             Timer(500);
             PORTD &= ~(1 << PD3);
             }
             
-            if(PINC &(1 << PC0)){
-            PORTD |= (1 << PD2); 
-            }else{
-            PORTD &= ~(1 << PD2);
-            }
+            // if(PINC &(1 << PC0)){
+            // PORTD |= (1 << PD2); 
+            // }else{
+            // PORTD &= ~(1 << PD2);
+            // }
       
-            if(PINC &(1 << PC1)){
-            PORTD |= (1 << PD3); 
-            }else{
-            PORTD &= ~(1 << PD3);
-            }
+            // if(PINC &(1 << PC1)){
+            // PORTD |= (1 << PD3); 
+            // }else{
+            // PORTD &= ~(1 << PD3);
+            // }
 
-            if(PINC &(1 << PC2)){
-            PORTD |= (1 << PD4); 
-            }else{
-            PORTD &= ~(1 << PD4);}
+            // if(PINC &(1 << PC2)){
+            // PORTD |= (1 << PD4); 
+            // }else{
+            // PORTD &= ~(1 << PD4);}
         }
             
      
