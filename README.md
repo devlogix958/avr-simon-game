@@ -1,4 +1,4 @@
-#AVR Simon Game
+###AVR Simon Game
 A simple Simon-style memory game built around the ATmega328P microcontroller.
 The game generates a sequence of LED signals that the player has to reproduce using buttons. The sequence becomes progressively longer as the player successfully completes each round.
 
