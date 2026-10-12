@@ -9,8 +9,6 @@
 ![Language](https://img.shields.io/badge/language-C-blue)
 ![Schematic](https://img.shields.io/badge/schematic-KiCad-314cb0)
 
-<img src="docs/images/real-circuit.jpg" alt="Assembled circuit" width="600">
-
 </div>
 
 ---
