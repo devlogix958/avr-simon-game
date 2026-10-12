@@ -1,41 +1,100 @@
-#AVR Simon Game
+<div align="center">
+  
+# 🎮 AVR Simon Game
 
-A simple Simon-style memory game built around the ATmega328P microcontroller.
-The game generates a sequence of LED signals that the player has to reproduce using buttons. The sequence becomes progressively longer as the player successfully completes each round.
+**A Simon-style memory game built on the ATmega328P microcontroller**
 
-#Components
-- Arduino UNO
-- 3x push buttons
-- 3x LEDs
-- 3x 10 kΩ resistors for button pull-downs
-- 3x 220 Ω resistors for LED current limiting
+![Platform](https://img.shields.io/badge/platform-Arduino%20UNO-00979D?logo=arduino&logoColor=white)
+![MCU](https://img.shields.io/badge/MCU-ATmega328P-red)
+![Language](https://img.shields.io/badge/language-C-blue)
+![Schematic](https://img.shields.io/badge/schematic-KiCad-314cb0)
 
-#Hardware Schematic
+<img src="docs/images/real-circuit.jpg" alt="Assembled circuit" width="600">
+
+</div>
+
+---
+
+## About
+
+A simple Simon-style memory game. The device generates a sequence of LED flashes, and the player has to reproduce it using buttons. The sequence gets longer with every successfully completed round.
+
+## Components
+
+| Component | Qty | Purpose |
+|-----------|:---:|---------|
+| Arduino UNO (ATmega328P) | 1 | Microcontroller |
+| Push buttons | 3 | Player input |
+| LEDs | 3 | Sequence output |
+| 10 kΩ resistor | 3 | Button pull-downs |
+| 220 Ω resistor | 3 | LED current limiting |
+
+## Hardware
+
+### Schematic (KiCad)
 
 The complete hardware schematic was designed in KiCad.
-<img width="1006" height="673" alt="image" src="https://github.com/user-attachments/assets/4bddafbd-e0a3-487e-9731-4f8cc31924a2" />
 
-#Build
+<img src="https://github.com/user-attachments/assets/4bddafbd-e0a3-487e-9731-4f8cc31924a2" alt="KiCad schematic" width="800">
+
+### Assembled Circuit
+
+<img width="800" height="1050" alt="photo_2026-10-12_13-04-42" src="https://github.com/user-attachments/assets/35a43ab8-9e40-484d-80c2-db959e3b1e19" />
+
+### Pinout
+
+| Element | AVR Pin |
+|---------|-----|
+| BTN_RED | `PC0` |
+| BTN_GREEN | `PC1` |
+| BTN_BLUE | `PC2` |
+| LED_RED | `PD2` |
+| LED_GREEN | `PD3` |
+| LED_BLUE | `PD4` |
+
+## Build
 
 Clone the repository:
+
+```bash
 git clone https://github.com/devlogix958/avr-simon-game.git
 cd avr-simon-game
+```
 
 Build the firmware:
+
+```bash
 make
+```
 
-Connect the Arduino UNO to the programmer and run:
+Connect the Arduino UNO to the programmer and flash it:
+
+```bash
 make flash
+```
 
-To remove generated build files:
+Remove generated build files:
+
+```bash
 make clean
+```
 
-#How to Play
+## How to Play
 
-Press BTN_RED and BTN_GREEN simultaneously to start the game.
-Watch the LED sequence.
-Reproduce the sequence using the three buttons.
-If the sequence is correct, the next round begins with an increased difficulty.
-If the sequence is incorrect, the game ends or resets.
+1. Press **BTN_RED** and **BTN_GREEN** simultaneously to start the game.
+2. Watch the LED sequence.
+3. Reproduce the sequence using the three buttons.
+4. If the sequence is correct, the next round begins with increased difficulty.
+5. If the sequence is incorrect, the game ends or resets.
+
+## Project Structure
+
+```
+avr-simon-game/
+├── main.c          
+├── *.c / *.h       # other source files
+├── Makefile
+└── README.md
+```
 
 
