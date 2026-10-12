@@ -39,18 +39,18 @@ The complete hardware schematic was designed in KiCad.
 
 ### Assembled Circuit
 
-<img width="800" height="1050" alt="photo_2026-10-12_13-04-42" src="https://github.com/user-attachments/assets/35a43ab8-9e40-484d-80c2-db959e3b1e19" />
+<img width="800" height="800" alt="photo_2026-10-12_13-04-42" src="https://github.com/user-attachments/assets/35a43ab8-9e40-484d-80c2-db959e3b1e19" />
 
 ### Pinout
 
-| Element | AVR Pin |
-|---------|-----|
-| BTN_RED | `PC0` |
-| BTN_GREEN | `PC1` |
-| BTN_BLUE | `PC2` |
-| LED_RED | `PD2` |
-| LED_GREEN | `PD3` |
-| LED_BLUE | `PD4` |
+| Element | AVR Pin | Arduino Pin |
+|---------|-----|-----|
+| BTN_RED | `PC0` | `A0` |
+| BTN_GREEN | `PC1` | `A1` |
+| BTN_BLUE | `PC2` | `A2` |
+| LED_RED | `PD2` | `D2` |
+| LED_GREEN | `PD3` | `D3` |
+| LED_BLUE | `PD4` | `D4` |
 
 ## Build
 
