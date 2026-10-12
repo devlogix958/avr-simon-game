@@ -1,13 +1,8 @@
-<div align="center">
+<div>
   
 # 🎮 AVR Simon Game
 
 **A Simon-style memory game built on the ATmega328P microcontroller**
-
-![Platform](https://img.shields.io/badge/platform-Arduino%20UNO-00979D?logo=arduino&logoColor=white)
-![MCU](https://img.shields.io/badge/MCU-ATmega328P-red)
-![Language](https://img.shields.io/badge/language-C-blue)
-![Schematic](https://img.shields.io/badge/schematic-KiCad-314cb0)
 
 </div>
 
