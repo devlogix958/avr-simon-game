@@ -1,6 +1,6 @@
 <div>
   
-# 🎮 AVR Simon Game
+# AVR Simon Game
 
 **A Simon-style memory game built on the ATmega328P microcontroller**
 
