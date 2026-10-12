@@ -37,7 +37,7 @@ The complete hardware schematic was designed in KiCad.
 
 ### Assembled Circuit
 
-<img width="800" height="500" alt="photo_2026-10-12_13-04-42" src="https://github.com/user-attachments/assets/35a43ab8-9e40-484d-80c2-db959e3b1e19" />
+<img width="800" height="600" alt="photo_2026-10-12_13-04-42" src="https://github.com/user-attachments/assets/35a43ab8-9e40-484d-80c2-db959e3b1e19" />
 
 ### Pinout
 
